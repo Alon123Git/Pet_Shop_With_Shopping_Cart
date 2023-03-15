@@ -1,0 +1,64 @@
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Site css*/
+
+#MainPage {
+    border-collapse: collapse;
+    font-size: 18px;
+    height: 20vh;
+    width: 70vw;
+}
+
+
+.MainPageTr {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+    .MainPageTr > th {
+        background-color: red;
+    }
+
+.top {
+    background-color: green;
+}
+
+.bottom {
+    background-color: aqua;
+}
+
+td {
+    background-color: green;
+}
+
+.MainPageTr > th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+/*css added stop the site: */
+
+ul {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+#AddAnimalTitle {
+    text-align: center;
+}
+
+
+.form-horizontal {
+    background-color: green;
+    padding: 20px 70px;
+    color: white;
+}

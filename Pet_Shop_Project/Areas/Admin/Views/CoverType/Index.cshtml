@@ -1,0 +1,125 @@
+﻿@model IEnumerable<Models.CoverType>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" href="~/css/Catalouge.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/SiteLayout.css" asp-append-version="true" />
+
+<body>
+    <div class="heroTitle">
+        <h2 class="title-text">Catalouge</h2>
+    </div>
+    <br />
+    <br />
+    <div id="text_catalog">
+        <span id="secondTitle">
+            Welcome to the catalouge :)<br />
+        </span>
+    </div>
+
+    <br />
+    <br />
+
+    @*display pictures of the animals in carusel(boots trap): *@
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100 h-50" ID="Image1" src="~/Images/ID1.jpg" alt="Rabbit" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 h-50" ID="Image2" src="~/Images/ID2.jpg" alt="Cavia porcellus" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 h-50" ID="Image3" src="~/Images/ID3.jpeg" alt="Mesocricetus" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 h-50" ID="Image4" src="~/Images/Golden retriver(ID4).jpg" alt="Golden Retriever" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 h-50" ID="Image5" src="~/Images/ID5.jpg" alt="Cat" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 h-50" ID="Image5" src="~/Images/Clown fish(ID6).jpg" alt="Clown fish" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 h-50" ID="Image5" src="~/Images/ID7.jpg" alt="Labrodies" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 h-50" ID="Image5" src="~/Images/ID8.jpeg" alt="Catfish" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 h-50" ID="Image5" src="~/Images/ID9.jpeg" alt="Cyprinus" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 h-50" ID="Image5" src="~/Images/ID10.jpg" alt="Gold fish" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 h-50" ID="Image5" src="~/Images/ID11.jpeg" alt="Psittacidae" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 h-50" ID="Image5" src="~/Images/ID12.jpeg" alt="Chicken" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 h-50" ID="Image5" src="~/Images/ID13.jpg" alt="Coracias garrulus" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 h-50" ID="Image5" src="~/Images/ID14.jpeg" alt="Merops apiaster" />
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 h-50" ID="Image5" src="~/Images/ID15.jpg" alt="Jynx torquilla" />
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="Images">
+        <img class="img-animal" width="200" height="200" src="~/Images/ID1.jpg" alt="Rabbit" />
+        <img class="img-animal" width="200" height="200" src="~/Images/ID2.jpg" alt="Cavia porcellus" />
+        <img class="img-animal" width="200" height="200" src="~/Images/ID3.jpeg" alt="Mesocricetus" />
+        <img class="img-animal" width="200" height="200" src="~/Images/Golden retriver(ID4).jpg" alt="Golden Retriever" />
+        <img class="img-animal" width="200" height="200" src="~/Images/ID5.jpg" alt="Cat" />
+        <img class="img-animal" width="200" height="200" src="~/Images/Clown fish(ID6).jpg" alt="Clown fish" />
+        <img class="img-animal" width="200" height="200" src="~/Images/ID7.jpg" alt="Labrodies" />
+        <img class="img-animal" width="200" height="200" src="~/Images/ID8.jpeg" alt="Catfish" />
+        <img class="img-animal" width="200" height="200" src="~/Images/ID9.jpeg" alt="Cyprinus" />
+        <img class="img-animal" width="200" height="200" src="~/Images/ID10.jpg" alt="Gold fish" />
+        <img class="img-animal" width="200" height="200" src="~/Images/ID11.jpeg" alt="Psittacidae" />
+        <img class="img-animal" width="200" height="200" src="~/Images/ID12.jpeg" alt="Chicken" />
+        <img class="img-animal" width="200" height="200" src="~/Images/ID13.jpg" alt="Coracias garrulus" />
+        <img class="img-animal" width="200" height="200" src="~/Images/ID14.jpeg" alt="Merops apiaster" />
+        <img class="img-animal" width="200" height="200" src="~/Images/ID15.jpg" alt="Jynx torquilla" />
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    @*Table of details about the animals in the shop: *@
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+</body>

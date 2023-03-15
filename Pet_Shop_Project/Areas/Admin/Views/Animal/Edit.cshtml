@@ -1,0 +1,50 @@
+﻿@model Models.ViewModels.AnimalVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@*Relate to css: *@
+<link rel="stylesheet" href="~/CSS/SiteLayout.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/CSS/Details.css" asp-append-version="true" />
+
+<body>
+    <div class="heroTitle">
+        <h2 class="title-text">Edit</h2>
+    </div>
+    <form method="post" asp-action="Edit" enctype="multipart/form-data">
+        <input name="animalImageUrl" asp-for="animal.Id" hidden />
+        <input name="animalImageUrl" asp-for="animal.ImageUrl" hidden />
+
+        <label asp-for="animal.AnimalName">Name</label>
+        <input type="text" asp-for="animal.AnimalName" />
+        <span asp-validation-for="animal.AnimalName"></span>
+
+        <label asp-for="animal.Age">Age</label>
+        <input type="text" asp-for="animal.Age" />
+        <span asp-validation-for="animal.Age"></span>
+
+        <label asp-for="animal.ShortDescription">Description</label>
+        <input type="text" asp-for="animal.ShortDescription" />
+        <span asp-validation-for="animal.ShortDescription"></span>
+
+        <label asp-for="animal.ImageUrl">Image</label>
+        <input type="file" asp-for="animal.ImageUrl" />
+        <span asp-validation-for="animal.ImageUrl"></span>
+        <br />
+        <label asp-for="animal.Price">Price</label>
+        <input type="text" name="animalImageUrl" asp-for="animal.Price" />
+        <span asp-validation-for="animal.Price"></span>
+
+        @*<label asp-for="animal.CategoryId">Category ID</label>
+        <input type="text" name="animalImageUrl" asp-for="animal.CategoryId" />
+        <span asp-validation-for="animal.CategoryId"></span>*@
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" style="width:150px;">Update</button>
+            <a asp-asp-controller="Animal" asp-action="Edit" class="btn btn-secondary" style="sidth:150px;">
+                Back to List
+            </a>
+        </div>
+    </form>
+</body>

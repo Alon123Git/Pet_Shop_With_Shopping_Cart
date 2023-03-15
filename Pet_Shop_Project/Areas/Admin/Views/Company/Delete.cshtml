@@ -1,0 +1,46 @@
+﻿@model Models.Company
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@*Relate to css: *@
+<link rel="stylesheet" href="~/CSS/SiteLayout.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/CSS/Details" asp-append-version="true" />
+
+<body>
+    <div class="heroTitle">
+        <h2 class="title-text">Delete</h2>
+    </div>
+
+    <form method="post" asp-action="Delete" enctype="multipart/form-data">
+        <label asp-for="Name">Name</label>
+        <input type="text" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+
+        <label asp-for="StreetAdress">Name</label>
+        <input type="text" asp-for="StreetAdress" />
+        <span asp-validation-for="StreetAdress"></span>
+
+        <label asp-for="City">Name</label>
+        <input type="text" asp-for="City" />
+        <span asp-validation-for="City"></span>
+
+        <label asp-for="State">Name</label>
+        <input type="text" asp-for="State" />
+        <span asp-validation-for="State"></span>
+
+        <label asp-for="PostalCode">Name</label>
+        <input type="text" asp-for="PostalCode" />
+        <span asp-validation-for="PostalCode"></span>
+
+        <label asp-for="PhoneNumber">Name</label>
+        <input type="text" asp-for="PhoneNumber" />
+        <span asp-validation-for="PhoneNumber"></span>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" style="width:150px;">Delete</button>
+            <a asp-asp-controller="Company" asp-action="Index" class="btn btn-secondary" style="sidth:150px;">
+                Back to List
+            </a>
+        </div>
+    </form>
+</body>

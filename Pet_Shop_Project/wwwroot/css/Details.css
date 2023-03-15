@@ -1,0 +1,31 @@
+﻿/*Details css*/
+
+body {
+    background-image: url("../Images/PetShopPicture.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h2 {
+    text-align: center;
+    color: green;
+}
+
+
+#bigDl {
+    display: flex;
+    flex-direction: row;
+}
+
+#leftDiv {
+    background-color: yellow;
+    width: 70%;
+    padding: 40px;
+}
+
+#rightDiv {
+    background-color: lightgreen;
+    width: 30%;
+    padding: 40px;
+}

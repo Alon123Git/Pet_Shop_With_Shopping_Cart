@@ -1,0 +1,72 @@
+﻿@model Models.ViewModels.AnimalVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@*Relate to css: *@
+<link rel="stylesheet" href="~/CSS/Site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/CSS/SiteLayout.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/CSS/Details.css" asp-append-version="true" />
+
+<div class="heroTitle">
+    <h2 class="title-text">Create</h2>
+</div>
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <input name="animal.id" asp-for="animal.Id" hidden />
+    <input name="animal.ImageUrl" asp-for="animal.ImageUrl" hidden />
+    <h2>@(Model.animal.Id != 0 ? "Update" : "Create") Animal</h2>
+
+    <label asp-for="animal.AnimalName">Name</label>
+    <input type="text" asp-for="animal.AnimalName" />
+    <span asp-validation-for="animal.AnimalName"></span>
+
+    <label asp-for="animal.Age">Age</label>
+    <input type="text" asp-for="animal.Age" />
+    <span asp-validation-for="animal.Age"></span>
+
+    <label asp-for="animal.ShortDescription">Short description</label>
+    <textarea asp-for="animal.ShortDescription" rows="3"></textarea>
+    <span asp-validation-for="animal.ShortDescription"></span>
+
+    <label asp-for="animal.ImageUrl">Image</label>
+    <input type="file" name="animalImageUrl" asp-for="animal.ImageUrl" />
+    <span asp-validation-for="animal.ImageUrl"></span>
+
+    <label asp-for="animal.Price">Price</label>
+    <input type="text" asp-for="animal.Price" />
+    <span asp-validation-for="animal.Price"></span>
+
+    @*<label asp-for="animal.CategoryId">Category ID</label>
+    <input type="text" name="animalImageUrl" asp-for="animal.CategoryId" />
+    <span asp-validation-for="animal.CategoryId"></span>*@
+
+    <div class="col-12">
+        @if (Model.animal.Id != 0)
+        {
+            <button type="submit" class="btn btn-primary" style="width:150px;">Update</button>
+        }
+        else if (Model.animal.Id == 0)
+        {
+            <button type="submit" class="btn btn-primary" style="width:150px;">Create</button>
+        }
+
+        <a asp-asp-controller="Animal" asp-action="Admin" class="btn btn-secondary" style="sidth:150px;">
+            Back to List
+        </a>
+    </div>
+</form>
+@section Scripts {
+    <script>
+        selector: 'textarea',
+            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+                toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                    tinycomments_mode: 'embedded',
+                        tinycomments_author: 'Author name',
+                            mergetags_list: [
+                                { value: 'First.Name', title: 'First Name' },
+                                { value: 'Email', title: 'Email' },
+                            ]
+                            });
+    </script>
+}

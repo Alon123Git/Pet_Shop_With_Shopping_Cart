@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Animal>
+
+<link rel="stylesheet" href="/css/Home.css" />
+
+@foreach (var animal in Model)
+{
+    <div class="col-lg-3 col-md-6">
+        <div calss="row p-2">
+            <div class="col-12 p-1" style="border:1px solid #008cba; border-radius: 5px;">
+                <div class="card">
+                    <a asp-area="Customer" asp-controller="Home" asp-action="Details" asp-route-animalid="@animal.Id">
+                        <img width="200" height="200" src="@animal.ImageUrl" class="card-img-top rounded" />
+                    </a>
+                    <span>Price: @animal.Price</span>
+                    <a id="det" asp-area="Customer" asp-controller="Home" asp-action="Details" asp-route-animalid="@animal.Id">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

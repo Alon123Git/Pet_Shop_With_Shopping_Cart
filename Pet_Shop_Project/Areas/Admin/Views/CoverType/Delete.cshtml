@@ -1,0 +1,46 @@
+﻿@model Models.CoverType
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@*Relate to css: *@
+<link rel="stylesheet" href="~/CSS/SiteLayout.css" type="text/css" />
+<link rel="stylesheet" href="~/CSS/Details" type="text/css" />
+
+<body>
+    <div class="heroTitle">
+        <h2 class="title-text">Delete</h2>
+    </div>
+
+    <div>
+        <h3>Are you sure you want to delete this?</h3>
+        <div class="form-horizontal">
+            <h4>Animal</h4>
+            <hr />
+
+            @*Details about the animal: *@
+            <dl class="dl-horizontal">
+                <div id="detailsDiv">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                </div>
+
+            </dl>
+
+            @*Input to delete animal from the shop: *@
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" />
+                </div>
+            }
+        </div>
+    </div>
+</body>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Company>
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Company List</h2>
+        </div>
+        <div class="col-6 text=end">
+            <a asp-controller="Company" asp-action="Upsert" class="btn btn-primary">
+                <i class="bg-info bi-plus-circle"></i> &nbsp; Create New Company
+            </a>
+        </div>
+    </div>
+    <br />
+    <br />
+    <table id="tblData" class="table table-boredered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Adress</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                @foreach (var company in Model)
+                {
+                    <tr>
+                        <td>@company.Name</td>
+                        <td>@company.StreetAdress</td>
+                        <td>@company.City</td>
+                        <td>@company.State</td>
+                        <td>@company.PhoneNumber</td>
+                        <td>
+                            <ul>
+                                <li class="navItem">
+                                    <a asp-area="Admin" asp-controller="Company" asp-action="Upsert" asp-route-id="@company.Id">Edit</a>
+                                </li>
+                                <li class="navItem">
+                                    <a asp-area="Admin" asp-controller="Company" asp-action="Delete" asp-route-id="@company.Id">Delete</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@*@section Scripts{
+    <script src="~/js/Company.js"></script>
+    <script src="~/js/DeleteCompany.js"></script>
+}*@

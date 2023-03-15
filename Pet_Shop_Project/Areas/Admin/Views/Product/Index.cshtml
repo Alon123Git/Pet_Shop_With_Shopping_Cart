@@ -1,0 +1,34 @@
+﻿@model Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+@*Relate to css: *@
+<link rel="stylesheet" href="~/CSS/Site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/CSS/SiteLayout.css" asp-append-version="true" />
+
+<div class="heroTitle">
+    <h2 class="title-text">Create</h2>
+</div>
+<form method="post" asp-action="Upsert">
+    <label asp-for="Name">Name</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+
+    <label asp-for="OwnerPhoneNumber">Name</label>
+    <input asp-for="OwnerPhoneNumber" />
+    <span asp-validation-for="OwnerPhoneNumber"></span>
+
+    <label asp-for="Description">Name</label>
+    <input asp-for="Description" />
+    <span asp-validation-for="Description"></span>
+</form>
+@*Submit button to add new animal: *@
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Create" class="btn btn-default" />
+    </div>
+</div>
+}

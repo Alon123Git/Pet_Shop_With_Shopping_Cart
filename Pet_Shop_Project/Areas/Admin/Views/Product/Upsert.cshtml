@@ -1,0 +1,38 @@
+﻿@model Models.ViewModels.ProdcutVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+@*Relate to css: *@
+<link rel="stylesheet" href="~/CSS/Site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/CSS/SiteLayout.css" asp-append-version="true" />
+
+<div class="heroTitle">
+    <h2 class="title-text">Create</h2>
+</div>
+
+<form method="post" asp-action="Upsert">
+    <input asp-for="product.Id" hidden />
+    <input asp-for="product.ImageUrl" hidden />
+    <h1>Edit Product</h1>
+    <h2>@(Model.product.Id != 0 ? "Update" : "Create") Product</h2>
+    <label asp-for="product.Name">Name</label>
+    <input asp-for="product.Name" />
+    <span asp-validation-for="product.Name"></span>
+
+    <label asp-for="product.OwnerPhoneNumber">Name</label>
+    <input asp-for="product.OwnerPhoneNumber" />
+    <span asp-validation-for="product.OwnerPhoneNumber"></span>
+
+    <label asp-for="product.Description">Name</label>
+    <input asp-for="product.Description" />
+    <span asp-validation-for="product.Description"></span>
+</form>
+@*Submit button to add new animal: *@
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Create" class="btn btn-default" />
+    </div>
+</div>

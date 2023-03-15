@@ -1,0 +1,56 @@
+﻿@model Company
+
+@*Relate to css: *@
+@*<link rel="stylesheet" href="~/CSS/Site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/CSS/SiteLayout.css" asp-append-version="true" />*@
+
+<div class="heroTitle">
+    <h2 class="title-text">Create</h2>
+</div>
+<form method="post" asp-action="Upsert">
+    <input name="Id" asp-for="Id" hidden />
+
+    <label asp-for="Name">Name </label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+
+    <label asp-for="PhoneNumber">Phone number </label>
+    <input asp-for="PhoneNumber" />
+    <span asp-validation-for="PhoneNumber"></span>
+
+    <label asp-for="StreetAdress">Street adress </label>
+    <input asp-for="StreetAdress" />
+    <span asp-validation-for="StreetAdress"></span>
+
+    <label asp-for="City">City </label>
+    <input asp-for="City" />
+    <span asp-validation-for="City"></span>
+
+    <label asp-for="State">State </label>
+    <input asp-for="State" />
+    <span asp-validation-for="State"></span>
+
+    <label asp-for="PostalCode">Postal code </label>
+    <input asp-for="PostalCode" />
+    <span asp-validation-for="PostalCode"></span>
+
+    <div class="col-12">
+        @if (Model.Id != 0)
+        {
+            <button type="submit" class="btn btn-primary" style="width:150px;">Update</button>
+        }
+        else
+        {
+            <button type="submit" class="btn btn-primary" style="width:150px;">Update</button>
+        }
+        <a asp-asp-controller="Company" asp-action="Index" class="btn btn-secondary" style="sidth:150px;">
+            Back to List
+        </a>
+    </div>
+</form>
+
+@*@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartail" />
+    }
+}*@

@@ -1,0 +1,29 @@
+﻿@model Models.CoverType
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@*Relate to css: *@
+<link rel="stylesheet" href="~/CSS/SiteLayout.css" type="text/css" />
+<link rel="stylesheet" href="~/CSS/Details" type="text/css" />
+
+<body>
+    <div class="heroTitle">
+        <h2 class="title-text">Edit</h2>
+    </div>
+
+    <form method="post" asp-action="Create">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </form>
+    <div class="form-horizontal">
+        @*Input to save changes: *@
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save changes" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</body>

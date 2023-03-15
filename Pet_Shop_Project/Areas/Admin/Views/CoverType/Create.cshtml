@@ -1,0 +1,19 @@
+﻿@model Models.CoverType
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+@*Relate to css: *@
+<link rel="stylesheet" href="~/CSS/Site.css" type="text/css" />
+<link rel="stylesheet" href="~/CSS/SiteLayout.css" type="text/css" />
+
+<div class="heroTitle">
+    <h2 class="title-text">Create</h2>
+</div>
+<form method="post" asp-action="Create">
+    <label asp-for="Name">Name</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+</form>
